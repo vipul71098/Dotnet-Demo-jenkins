@@ -31,6 +31,7 @@ pipeline {
                done'''
                sh 'cd WebApplication/bin/Release/netcoreapp3.1/publish/'
                sh 'nohup dotnet WebApplication.dll --urls="http://13.233.2.228:9090" --ip="13.233.2.228" --port=9090 --no-restore > /dev/null 2>&1 &'
+               sh 'dotnet run --urls "http://13.233.2.228:9090"
              }
         }        
     }
